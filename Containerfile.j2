@@ -1,0 +1,48 @@
+ARG BASE_VERSION=15
+FROM ghcr.io/daemonless/base:${BASE_VERSION}
+
+WORKDIR /app
+
+ARG FREEBSD_ARCH=amd64
+
+LABEL org.opencontainers.image.title="{{ title }}" \
+      org.opencontainers.image.description="{{ description }}" \
+      org.opencontainers.image.source="{{ upstream_url }}" \
+      org.opencontainers.image.url="{{ web_url }}" \
+      org.opencontainers.image.licenses="AGPL-3.0-only" \
+      org.opencontainers.image.vendor="daemonless" \
+      org.opencontainers.image.authors="daemonless" \
+      io.daemonless.category="{{ category }}" \
+      io.daemonless.port="{{ ports[0].port }}" \
+      io.daemonless.arch="${FREEBSD_ARCH}" \
+      io.daemonless.healthcheck-url="http://localhost:{{ ports[0].port }}/"
+
+ENV NODE_ENV=production
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV PORT=3000
+ENV HOSTNAME=0.0.0.0
+ENV HEALTHCHECK_URL="http://localhost:3000/"
+ENV ADMIN_CONFIG_DIR=/config/admin
+ENV ADMIN_STATE_DIR=/config/admin-state
+ENV SETTINGS_DATA_DIR=/config/settings
+ENV TELEMETRY_DATA_DIR=/config/telemetry
+
+RUN pkg update && \
+    pkg install -y node24 ca_root_nss && \
+    pkg clean -ay && \
+    rm -rf /var/cache/pkg/* /var/db/pkg/repos/*
+
+COPY bulwark-standalone/ ./
+COPY bulwark-static/ ./.next/static
+COPY bulwark-public/ ./public
+COPY version /app/version
+
+COPY root/ /
+
+RUN mkdir -p /config/admin /config/admin-state /config/settings /config/telemetry && \
+    chown -R bsd:bsd /config /app && \
+    chmod +x /etc/services.d/bulwark-webmail/run
+
+EXPOSE {{ ports[0].port }}
+
+VOLUME /config

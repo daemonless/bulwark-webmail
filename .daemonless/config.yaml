@@ -1,0 +1,17 @@
+# dbuild configuration file
+# Place in .daemonless/config.yaml or .dbuild.yaml (higher priority)
+#
+# Full reference: https://github.com/daemonless/dbuild
+
+build:
+  architectures: [amd64]
+  variants:
+    - tag: latest
+      containerfile: Containerfile
+      default: true
+
+cit:
+  mode: health
+  port: 3000
+  health: /
+  ready: "Ready in"
