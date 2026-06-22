@@ -1,0 +1,72 @@
+name: Build FreeBSD Container
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ['*.md', 'LICENSE', '.gitignore']
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-web:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Bulwark Webmail
+        uses: actions/checkout@v4
+        with:
+          repository: bulwarkmail/webmail
+          ref: "1.7.4"
+
+      - name: Resolve commit SHA
+        run: echo "GIT_COMMIT=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Build Bulwark Webmail
+        env:
+          NEXT_TELEMETRY_DISABLED: "1"
+          GIT_COMMIT: ${{ env.GIT_COMMIT }}
+        run: |
+          npm ci
+          npx next build --webpack
+
+          # Swap native sharp for the portable WebAssembly build.
+          # FreeBSD has no native sharp/libvips binary, so the Linux build
+          # bundled by `next build` cannot load there; the wasm build does.
+          SHARP_VER=$(node -p "require('./.next/standalone/node_modules/sharp/package.json').version")
+          ( cd /tmp && rm -rf wasmsharp && mkdir wasmsharp && cd wasmsharp && \
+            npm init -y >/dev/null && npm install --cpu=wasm32 "sharp@${SHARP_VER}" )
+          SA=.next/standalone/node_modules/@img
+          rm -rf "$SA"/sharp-linux* "$SA"/sharp-libvips-* "$SA"/sharp-linuxmusl*
+          cp -r /tmp/wasmsharp/node_modules/@img/sharp-wasm32 "$SA"/
+          [ -d /tmp/wasmsharp/node_modules/@img/colour ] && cp -r /tmp/wasmsharp/node_modules/@img/colour "$SA"/
+          for d in @emnapi @napi-rs @tybys; do
+            [ -d "/tmp/wasmsharp/node_modules/$d" ] && cp -r "/tmp/wasmsharp/node_modules/$d" .next/standalone/node_modules/
+          done
+
+          mkdir -p /tmp/bulwark-web
+          cp -a .next/standalone /tmp/bulwark-web/bulwark-standalone
+          cp -a .next/static     /tmp/bulwark-web/bulwark-static
+          cp -a public           /tmp/bulwark-web/bulwark-public
+          node -p "require('./package.json').version" > /tmp/bulwark-web/version
+
+      - name: Upload Bulwark build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: bulwark-web
+          path: /tmp/bulwark-web/
+          include-hidden-files: true
+
+  build:
+    needs: build-web
+    uses: daemonless/dbuild/.github/workflows/daemonless-build.yaml@main
+    with:
+      image_name: bulwark-webmail
+      pre_artifact_name: bulwark-web
+      pre_artifact_path: .
+    secrets: inherit

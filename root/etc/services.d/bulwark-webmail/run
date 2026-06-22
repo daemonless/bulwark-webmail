@@ -1,0 +1,3 @@
+#!/bin/sh
+cd /app
+exec /usr/local/bin/s6-setuidgid bsd /usr/local/bin/node server.js

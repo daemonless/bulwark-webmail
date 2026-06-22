@@ -1,0 +1,5 @@
+# CI/local build artifacts (produced by the build-web job or local Next build)
+/bulwark-standalone/
+/bulwark-static/
+/bulwark-public/
+/version

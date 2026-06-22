@@ -1,0 +1,39 @@
+name: bulwark-webmail
+
+x-daemonless:
+  title: "Bulwark Webmail"
+  icon: ":material-email:"
+  category: "Productivity"
+  description: "Modern self-hosted webmail client for Stalwart Mail Server, powered by JMAP."
+  upstream_url: "https://github.com/bulwarkmail/webmail"
+  web_url: "https://bulwarkmail.org/"
+  user: "bsd"
+  mlock: false
+  appjail: true
+
+  docs:
+    env:
+      JMAP_SERVER_URL: "URL of your Stalwart JMAP server (e.g. https://mail.example.com)"
+      TZ: "Timezone for the container"
+    volumes:
+      /config: "Admin config, settings sync, and telemetry state"
+    ports:
+      3000: "Web UI"
+
+services:
+  bulwark-webmail:
+    image: ghcr.io/daemonless/bulwark-webmail:latest
+    container_name: bulwark-webmail
+    restart: unless-stopped
+
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=UTC
+      - JMAP_SERVER_URL=https://mail.example.com
+
+    volumes:
+      - /path/to/containers/bulwark-webmail:/config
+
+    ports:
+      - 3000:3000
