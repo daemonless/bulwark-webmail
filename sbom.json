@@ -1,0 +1,381 @@
+{
+  "generated": "2026-06-22T13:35:43Z",
+  "image": "bulwark-webmail",
+  "tags": {
+    "latest": {
+      "app_version": "1.7.4",
+      "arch": "amd64",
+      "generated": "2026-06-22T13:34:25Z",
+      "packages": {
+        "dotnet": [],
+        "freebsd": [
+          {
+            "name": "FreeBSD-audit-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-blocklist",
+            "version": "15.0p3"
+          },
+          {
+            "name": "FreeBSD-bzip2-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-certctl",
+            "version": "15.0p10"
+          },
+          {
+            "name": "FreeBSD-clibs",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-ctf-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-fetch",
+            "version": "15.0p10"
+          },
+          {
+            "name": "FreeBSD-kerberos-lib",
+            "version": "15.0p10"
+          },
+          {
+            "name": "FreeBSD-libarchive",
+            "version": "15.0p10"
+          },
+          {
+            "name": "FreeBSD-libbsdstat",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-libcasper",
+            "version": "15.0p9"
+          },
+          {
+            "name": "FreeBSD-libexecinfo",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-libldns",
+            "version": "15.0p10"
+          },
+          {
+            "name": "FreeBSD-libmagic",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-libucl",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-mtree",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-ncurses-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-openssl",
+            "version": "15.0p10"
+          },
+          {
+            "name": "FreeBSD-openssl-lib",
+            "version": "15.0p10"
+          },
+          {
+            "name": "FreeBSD-pkg-bootstrap",
+            "version": "15.0p10"
+          },
+          {
+            "name": "FreeBSD-rc",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-runtime",
+            "version": "15.0p10"
+          },
+          {
+            "name": "FreeBSD-tcpd",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-ufs-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-utilities",
+            "version": "15.0p10"
+          },
+          {
+            "name": "FreeBSD-xz-lib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-zfs-lib",
+            "version": "15.0p10"
+          },
+          {
+            "name": "FreeBSD-zlib",
+            "version": "15.0"
+          },
+          {
+            "name": "FreeBSD-zoneinfo",
+            "version": "15.0p7"
+          },
+          {
+            "name": "brotli",
+            "version": "1.2.0,1"
+          },
+          {
+            "name": "c-ares",
+            "version": "1.34.6"
+          },
+          {
+            "name": "ca_root_nss",
+            "version": "3.124"
+          },
+          {
+            "name": "corepack",
+            "version": "0.34.6"
+          },
+          {
+            "name": "execline",
+            "version": "2.9.8.1"
+          },
+          {
+            "name": "googletest",
+            "version": "1.16.0"
+          },
+          {
+            "name": "hdr_histogram",
+            "version": "0.11.9"
+          },
+          {
+            "name": "icu",
+            "version": "76.1,1"
+          },
+          {
+            "name": "jq",
+            "version": "1.8.1"
+          },
+          {
+            "name": "libada",
+            "version": "3.4.4"
+          },
+          {
+            "name": "libedit",
+            "version": "3.1.20251016_1,1"
+          },
+          {
+            "name": "libnghttp2",
+            "version": "1.68.1"
+          },
+          {
+            "name": "libnghttp3",
+            "version": "1.15.0"
+          },
+          {
+            "name": "libngtcp2",
+            "version": "1.22.1"
+          },
+          {
+            "name": "libuv",
+            "version": "1.52.0"
+          },
+          {
+            "name": "llhttp",
+            "version": "9.3.1"
+          },
+          {
+            "name": "merve",
+            "version": "1.2.0_1"
+          },
+          {
+            "name": "nbytes",
+            "version": "0.1.3"
+          },
+          {
+            "name": "node24",
+            "version": "24.14.1"
+          },
+          {
+            "name": "oniguruma",
+            "version": "6.9.10"
+          },
+          {
+            "name": "pkg",
+            "version": "2.6.2_1"
+          },
+          {
+            "name": "s6",
+            "version": "2.14.0.1"
+          },
+          {
+            "name": "simdjson",
+            "version": "4.5.0"
+          },
+          {
+            "name": "simdutf",
+            "version": "8.2.0"
+          },
+          {
+            "name": "skalibs",
+            "version": "2.14.5.1"
+          },
+          {
+            "name": "sqlite3",
+            "version": "3.50.4_2,1"
+          },
+          {
+            "name": "uvwasi",
+            "version": "0.0.23"
+          },
+          {
+            "name": "zstd",
+            "version": "1.5.7_1"
+          }
+        ],
+        "go": [],
+        "java": [],
+        "node": [
+          {
+            "name": "@edge-runtime/cookies",
+            "version": "6.0.0"
+          },
+          {
+            "name": "@edge-runtime/ponyfill",
+            "version": "4.0.0"
+          },
+          {
+            "name": "@edge-runtime/primitives",
+            "version": "6.0.0"
+          },
+          {
+            "name": "@emnapi/runtime",
+            "version": "1.11.1"
+          },
+          {
+            "name": "@esbuild/linux-x64",
+            "version": "0.28.0"
+          },
+          {
+            "name": "@img/colour",
+            "version": "1.1.0"
+          },
+          {
+            "name": "@img/sharp-wasm32",
+            "version": "0.34.5"
+          },
+          {
+            "name": "@next/env",
+            "version": "16.2.6"
+          },
+          {
+            "name": "@swc/helpers",
+            "version": "0.5.15"
+          },
+          {
+            "name": "baseline-browser-mapping",
+            "version": "2.10.0"
+          },
+          {
+            "name": "bulwark-webmail",
+            "version": "1.7.4"
+          },
+          {
+            "name": "caniuse-lite",
+            "version": "1.0.30001772"
+          },
+          {
+            "name": "client-only",
+            "version": "0.0.1"
+          },
+          {
+            "name": "corepack",
+            "version": "0.34.6"
+          },
+          {
+            "name": "detect-libc",
+            "version": "2.1.2"
+          },
+          {
+            "name": "esbuild",
+            "version": "0.28.0"
+          },
+          {
+            "name": "nanoid",
+            "version": "3.3.11"
+          },
+          {
+            "name": "next",
+            "version": "16.2.6"
+          },
+          {
+            "name": "picocolors",
+            "version": "1.1.1"
+          },
+          {
+            "name": "postcss",
+            "version": "8.4.31"
+          },
+          {
+            "name": "react",
+            "version": "19.2.5"
+          },
+          {
+            "name": "react-dom",
+            "version": "19.2.5"
+          },
+          {
+            "name": "react-is",
+            "version": "19.3.0-canary-3f0b9e61-20260317"
+          },
+          {
+            "name": "react-refresh",
+            "version": "0.12.0"
+          },
+          {
+            "name": "regenerator-runtime",
+            "version": "0.13.4"
+          },
+          {
+            "name": "semver",
+            "version": "7.7.4"
+          },
+          {
+            "name": "sharp",
+            "version": "0.34.5"
+          },
+          {
+            "name": "source-map-js",
+            "version": "1.2.1"
+          },
+          {
+            "name": "styled-jsx",
+            "version": "5.1.6"
+          }
+        ],
+        "php": [],
+        "python": [],
+        "ruby": [],
+        "rust": []
+      },
+      "source": "upstream",
+      "summary": {
+        "dotnet": 0,
+        "freebsd": 57,
+        "go": 0,
+        "java": 0,
+        "node": 29,
+        "php": 0,
+        "python": 0,
+        "ruby": 0,
+        "rust": 0,
+        "total": 86
+      }
+    }
+  }
+}
