@@ -4,6 +4,8 @@ FROM ghcr.io/daemonless/base:${BASE_VERSION}
 WORKDIR /app
 
 ARG FREEBSD_ARCH=amd64
+ARG UPSTREAM_URL="https://api.github.com/repos/bulwarkmail/webmail/releases/latest"
+ARG UPSTREAM_JQ=".tag_name"
 
 LABEL org.opencontainers.image.title="{{ title }}" \
       org.opencontainers.image.description="{{ description }}" \
@@ -15,6 +17,8 @@ LABEL org.opencontainers.image.title="{{ title }}" \
       io.daemonless.category="{{ category }}" \
       io.daemonless.port="{{ ports[0].port }}" \
       io.daemonless.arch="${FREEBSD_ARCH}" \
+      io.daemonless.upstream-url="${UPSTREAM_URL}" \
+      io.daemonless.upstream-jq="${UPSTREAM_JQ}" \
       io.daemonless.healthcheck-url="http://localhost:{{ ports[0].port }}/"
 
 ENV NODE_ENV=production

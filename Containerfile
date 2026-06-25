@@ -10,6 +10,8 @@ FROM ghcr.io/daemonless/base:${BASE_VERSION}
 WORKDIR /app
 
 ARG FREEBSD_ARCH=amd64
+ARG UPSTREAM_URL="https://api.github.com/repos/bulwarkmail/webmail/releases/latest"
+ARG UPSTREAM_JQ=".tag_name"
 
 LABEL org.opencontainers.image.title="Bulwark Webmail" \
       org.opencontainers.image.description="Modern self-hosted webmail client for Stalwart Mail Server, powered by JMAP." \
@@ -21,6 +23,8 @@ LABEL org.opencontainers.image.title="Bulwark Webmail" \
       io.daemonless.category="Productivity" \
       io.daemonless.port="3000" \
       io.daemonless.arch="${FREEBSD_ARCH}" \
+      io.daemonless.upstream-url="${UPSTREAM_URL}" \
+      io.daemonless.upstream-jq="${UPSTREAM_JQ}" \
       io.daemonless.healthcheck-url="http://localhost:3000/"
 
 ENV NODE_ENV=production
