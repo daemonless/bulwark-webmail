@@ -18,13 +18,11 @@ Modern self-hosted webmail client for Stalwart Mail Server, powered by JMAP.
 | **Website** | [https://bulwarkmail.org/](https://bulwarkmail.org/) |
 
 ## Version Tags
-
 | Tag | Description | Best For |
 | :--- | :--- | :--- |
 | `latest` | **Upstream Binary**. Built from official release. | Most users. Matches Linux Docker behavior. |
 
 ## Prerequisites
-
 Before deploying, ensure your host environment is ready. See the [Quick Start Guide](https://daemonless.io/guides/quick-start) for host setup instructions.
 
 ## Deployment
@@ -34,25 +32,26 @@ Before deploying, ensure your host environment is ready. See the [Quick Start Gu
 ```yaml
 services:
   bulwark-webmail:
-    image: ghcr.io/daemonless/bulwark-webmail:latest
+    image: "ghcr.io/daemonless/bulwark-webmail:latest"
     container_name: bulwark-webmail
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=UTC
-      - JMAP_SERVER_URL=https://mail.example.com
+      - TZ=UTC  # Timezone for the container
+      - JMAP_SERVER_URL=https://mail.example.com  # URL of your Stalwart JMAP server (e.g. https://mail.example.com)
     volumes:
       - "/path/to/containers/bulwark-webmail:/config"
     ports:
-      - 3000:3000
+      - "3000:3000"
     restart: unless-stopped
 ```
 
 ### AppJail Director
-
 **.env**:
 
 ```
+# .env
+
 DIRECTOR_PROJECT=bulwark-webmail
 PUID=1000
 PGID=1000
@@ -63,6 +62,8 @@ JMAP_SERVER_URL=https://mail.example.com
 **appjail-director.yml**:
 
 ```yaml
+# appjail-director.yml
+
 options:
   - virtualnet: ':<random> default'
   - nat:
@@ -71,6 +72,7 @@ services:
     name: bulwark_webmail
     options:
       - container: 'boot args:--pull'
+      - expose: '3000:3000 proto:tcp' \
     oci:
       user: root
       environment:
@@ -88,11 +90,14 @@ volumes:
 **Makejail**:
 
 ```
+# Makejail
+
 ARG tag=latest
 
 OPTION overwrite=force
 OPTION from=ghcr.io/daemonless/bulwark-webmail:${tag}
 ```
+**Note**: Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the IPv4 address assigned by the virtual network.
 
 ### Podman CLI
 
@@ -107,13 +112,31 @@ podman run -d --name bulwark-webmail \
   ghcr.io/daemonless/bulwark-webmail:latest
 ```
 
+### AppJail
+
+```bash
+appjail oci run -Pd \
+  -o overwrite=force \
+  -o container="args:--pull" \
+  -o virtualnet=":<random> default" \
+  -o nat \
+  -o expose="3000:3000 proto:tcp" \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=UTC \
+  -e JMAP_SERVER_URL=https://mail.example.com \
+  -o fstab="/path/to/containers/bulwark-webmail /config <pseudofs>" \
+  ghcr.io/daemonless/bulwark-webmail:latest bulwark-webmail
+```
+**Note**: Exposing ports in AppJail means that your service can be reached from remote hosts. If that is not your intention, do not expose the ports and communicate with the service using the IPv4 address assigned by the virtual network.
+
 ### Ansible
 
 ```yaml
 - name: Deploy bulwark-webmail
   containers.podman.podman_container:
     name: bulwark-webmail
-    image: ghcr.io/daemonless/bulwark-webmail:latest
+    image: "ghcr.io/daemonless/bulwark-webmail:latest"
     state: started
     restart_policy: always
     env:
@@ -126,6 +149,8 @@ podman run -d --name bulwark-webmail \
     volumes:
       - "/path/to/containers/bulwark-webmail:/config"
 ```
+
+Access at: `http://localhost:3000`
 
 ## Parameters
 
@@ -152,7 +177,7 @@ podman run -d --name bulwark-webmail \
 
 **Architectures:** amd64
 **User:** `bsd` (UID/GID via PUID/PGID, defaults to 1000:1000)
-**Base:** FreeBSD 15.0
+**Base:** FreeBSD 15
 
 ---
 
