@@ -1,11 +1,11 @@
 {
-  "generated": "2026-06-22T13:35:43Z",
+  "generated": "2026-06-25T23:14:52Z",
   "image": "bulwark-webmail",
   "tags": {
     "latest": {
       "app_version": "1.7.4",
       "arch": "amd64",
-      "generated": "2026-06-22T13:34:25Z",
+      "generated": "2026-06-25T23:13:32Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
