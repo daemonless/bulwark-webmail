@@ -13,11 +13,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Get latest Bulwark Webmail tag
+        id: tag
+        run: |
+          BULWARK_TAG=$(git ls-remote --tags --sort="v:refname" \
+            https://github.com/bulwarkmail/webmail.git | \
+            grep -v '\^{}' | tail -n1 | sed 's/.*\///')
+          echo "tag=${BULWARK_TAG}" >> "$GITHUB_OUTPUT"
+
       - name: Checkout Bulwark Webmail
         uses: actions/checkout@v4
         with:
           repository: bulwarkmail/webmail
-          ref: "1.7.4"
+          ref: ${{ steps.tag.outputs.tag }}
 
       - name: Resolve commit SHA
         run: echo "GIT_COMMIT=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
