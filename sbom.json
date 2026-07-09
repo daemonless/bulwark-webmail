@@ -1,11 +1,11 @@
 {
-  "generated": "2026-06-28T20:13:42Z",
+  "generated": "2026-07-09T16:50:14Z",
   "image": "bulwark-webmail",
   "tags": {
     "latest": {
-      "app_version": "1.7.6",
+      "app_version": "1.7.7",
       "arch": "amd64",
-      "generated": "2026-06-28T20:12:29Z",
+      "generated": "2026-07-09T16:48:58Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -27,7 +27,7 @@
           },
           {
             "name": "FreeBSD-clibs",
-            "version": "15.0"
+            "version": "15.0p11"
           },
           {
             "name": "FreeBSD-ctf-lib",
@@ -95,7 +95,7 @@
           },
           {
             "name": "FreeBSD-runtime",
-            "version": "15.0p10"
+            "version": "15.0p11"
           },
           {
             "name": "FreeBSD-tcpd",
@@ -107,7 +107,7 @@
           },
           {
             "name": "FreeBSD-utilities",
-            "version": "15.0p10"
+            "version": "15.0p11"
           },
           {
             "name": "FreeBSD-xz-lib",
@@ -115,7 +115,7 @@
           },
           {
             "name": "FreeBSD-zfs-lib",
-            "version": "15.0p10"
+            "version": "15.0p11"
           },
           {
             "name": "FreeBSD-zlib",
@@ -199,7 +199,7 @@
           },
           {
             "name": "node24",
-            "version": "24.14.1"
+            "version": "24.18.0"
           },
           {
             "name": "oniguruma",
@@ -255,7 +255,7 @@
           },
           {
             "name": "@emnapi/runtime",
-            "version": "1.11.1"
+            "version": "1.11.2"
           },
           {
             "name": "@esbuild/linux-x64",
@@ -283,7 +283,7 @@
           },
           {
             "name": "bulwark-webmail",
-            "version": "1.7.6"
+            "version": "1.7.7"
           },
           {
             "name": "caniuse-lite",
