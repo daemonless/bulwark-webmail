@@ -1,11 +1,11 @@
 {
-  "generated": "2026-07-19T23:32:36Z",
+  "generated": "2026-07-23T06:58:21Z",
   "image": "bulwark-webmail",
   "tags": {
     "latest": {
-      "app_version": "1.7.7",
+      "app_version": "1.7.8",
       "arch": "amd64",
-      "generated": "2026-07-19T23:31:19Z",
+      "generated": "2026-07-23T06:57:01Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -267,7 +267,7 @@
           },
           {
             "name": "@esbuild/linux-x64",
-            "version": "0.28.0"
+            "version": "0.28.1"
           },
           {
             "name": "@img/colour",
@@ -279,7 +279,7 @@
           },
           {
             "name": "@next/env",
-            "version": "16.2.6"
+            "version": "16.2.11"
           },
           {
             "name": "@swc/helpers",
@@ -287,15 +287,15 @@
           },
           {
             "name": "baseline-browser-mapping",
-            "version": "2.10.0"
+            "version": "2.11.0"
           },
           {
             "name": "bulwark-webmail",
-            "version": "1.7.7"
+            "version": "1.7.8"
           },
           {
             "name": "caniuse-lite",
-            "version": "1.0.30001772"
+            "version": "1.0.30001806"
           },
           {
             "name": "client-only",
@@ -311,15 +311,15 @@
           },
           {
             "name": "esbuild",
-            "version": "0.28.0"
+            "version": "0.28.1"
           },
           {
             "name": "nanoid",
-            "version": "3.3.11"
+            "version": "3.3.16"
           },
           {
             "name": "next",
-            "version": "16.2.6"
+            "version": "16.2.11"
           },
           {
             "name": "picocolors",
