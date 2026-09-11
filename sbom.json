@@ -1,11 +1,11 @@
 {
-  "generated": "2026-08-27T14:53:04Z",
+  "generated": "2026-09-11T23:36:49Z",
   "image": "bulwark-webmail",
   "tags": {
     "latest": {
       "app_version": "1.9.2",
       "arch": "amd64",
-      "generated": "2026-08-27T14:52:18Z",
+      "generated": "2026-09-11T23:36:04Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -147,7 +147,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-openssl-lib",
-            "version": "15.1"
+            "version": "15.1p3"
           },
           {
             "licenses": [
@@ -175,7 +175,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p2"
+            "version": "15.1p3"
           },
           {
             "licenses": [
@@ -252,7 +252,7 @@
               "MPL20"
             ],
             "name": "ca_root_nss",
-            "version": "3.127"
+            "version": "3.129"
           },
           {
             "licenses": [
@@ -375,7 +375,7 @@
               "MIT"
             ],
             "name": "node24",
-            "version": "24.18.0"
+            "version": "24.19.0"
           },
           {
             "licenses": [
@@ -404,7 +404,7 @@
               "APACHE20"
             ],
             "name": "simdjson",
-            "version": "4.6.8"
+            "version": "4.6.11"
           },
           {
             "licenses": [
