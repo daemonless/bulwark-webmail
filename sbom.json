@@ -1,11 +1,11 @@
 {
-  "generated": "2026-09-11T23:36:49Z",
+  "generated": "2026-09-17T22:30:20Z",
   "image": "bulwark-webmail",
   "tags": {
     "latest": {
-      "app_version": "1.9.2",
+      "app_version": "1.10.0",
       "arch": "amd64",
-      "generated": "2026-09-11T23:36:04Z",
+      "generated": "2026-09-17T22:29:43Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -49,6 +49,13 @@
               "CDDL-1.0"
             ],
             "name": "FreeBSD-ctf-lib",
+            "version": "15.1"
+          },
+          {
+            "licenses": [
+              "BSD-3-Clause"
+            ],
+            "name": "FreeBSD-dhclient",
             "version": "15.1"
           },
           {
@@ -168,6 +175,13 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-rc",
+            "version": "15.1"
+          },
+          {
+            "licenses": [
+              "BSD2CLAUSE"
+            ],
+            "name": "FreeBSD-resolvconf",
             "version": "15.1"
           },
           {
@@ -480,7 +494,7 @@
           {
             "name": "@img/sharp-wasm32",
             "purl": "",
-            "version": "0.35.3"
+            "version": "0.35.4"
           },
           {
             "name": "@next/env",
@@ -500,7 +514,7 @@
           {
             "name": "bulwark-webmail",
             "purl": "",
-            "version": "1.9.2"
+            "version": "1.10.0"
           },
           {
             "name": "caniuse-lite",
@@ -580,7 +594,7 @@
           {
             "name": "sharp",
             "purl": "",
-            "version": "0.35.3"
+            "version": "0.35.4"
           },
           {
             "name": "source-map-js",
@@ -601,7 +615,7 @@
       "source": "upstream",
       "summary": {
         "dotnet": 0,
-        "freebsd": 61,
+        "freebsd": 63,
         "go": 0,
         "java": 0,
         "node": 29,
@@ -609,7 +623,7 @@
         "python": 0,
         "ruby": 0,
         "rust": 0,
-        "total": 90
+        "total": 92
       }
     }
   }

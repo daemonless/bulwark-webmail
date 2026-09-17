@@ -7,6 +7,7 @@ Source: dbuild templates
 
 [![Build Status](https://img.shields.io/github/actions/workflow/status/daemonless/bulwark-webmail/build.yaml?style=flat-square&label=Build&color=green)](https://github.com/daemonless/bulwark-webmail/actions)
 [![Last Commit](https://img.shields.io/github/last-commit/daemonless/bulwark-webmail?style=flat-square&label=Last+Commit&color=blue)](https://github.com/daemonless/bulwark-webmail/commits)
+[![OCI Pulls](https://img.shields.io/docker/pulls/daemonless/bulwark-webmail?style=flat-square&label=OCI+Pulls&color=blue)](https://hub.docker.com/r/daemonless/bulwark-webmail)
 
 Modern self-hosted webmail client for Stalwart Mail Server, powered by JMAP.
 
