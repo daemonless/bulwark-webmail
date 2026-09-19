@@ -22,7 +22,7 @@ jobs:
           echo "tag=${BULWARK_TAG}" >> "$GITHUB_OUTPUT"
 
       - name: Checkout Bulwark Webmail
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           repository: bulwarkmail/webmail
           ref: ${{ steps.tag.outputs.tag }}
@@ -31,7 +31,7 @@ jobs:
         run: echo "GIT_COMMIT=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
           node-version: 24
 
@@ -64,7 +64,7 @@ jobs:
           node -p "require('./package.json').version" > /tmp/bulwark-web/version
 
       - name: Upload Bulwark build artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: bulwark-web
           path: /tmp/bulwark-web/
