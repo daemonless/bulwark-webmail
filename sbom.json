@@ -1,11 +1,11 @@
 {
-  "generated": "2026-09-17T22:30:20Z",
+  "generated": "2026-09-19T20:59:45Z",
   "image": "bulwark-webmail",
   "tags": {
     "latest": {
-      "app_version": "1.10.0",
+      "app_version": "1.11.0-beta.1",
       "arch": "amd64",
-      "generated": "2026-09-17T22:29:43Z",
+      "generated": "2026-09-19T20:59:05Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -514,7 +514,7 @@
           {
             "name": "bulwark-webmail",
             "purl": "",
-            "version": "1.10.0"
+            "version": "1.11.0-beta.1"
           },
           {
             "name": "caniuse-lite",
