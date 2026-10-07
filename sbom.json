@@ -1,11 +1,11 @@
 {
-  "generated": "2026-09-30T22:48:26Z",
+  "generated": "2026-10-07T23:34:40Z",
   "image": "bulwark-webmail",
   "tags": {
     "latest": {
-      "app_version": "1.12.0",
+      "app_version": "1.13.0",
       "arch": "amd64",
-      "generated": "2026-09-30T22:47:43Z",
+      "generated": "2026-10-07T23:33:54Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -42,7 +42,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-clibs",
-            "version": "15.1p2"
+            "version": "15.1p4"
           },
           {
             "licenses": [
@@ -56,7 +56,7 @@
               "BSD-3-Clause"
             ],
             "name": "FreeBSD-dhclient",
-            "version": "15.1"
+            "version": "15.1p4"
           },
           {
             "licenses": [
@@ -91,7 +91,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-libcasper",
-            "version": "15.1"
+            "version": "15.1p4"
           },
           {
             "licenses": [
@@ -154,7 +154,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-openssl-lib",
-            "version": "15.1p3"
+            "version": "15.1p4"
           },
           {
             "licenses": [
@@ -189,7 +189,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p3"
+            "version": "15.1p4"
           },
           {
             "licenses": [
@@ -210,7 +210,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-utilities",
-            "version": "15.1p2"
+            "version": "15.1p4"
           },
           {
             "licenses": [
@@ -238,7 +238,7 @@
               "PD"
             ],
             "name": "FreeBSD-zoneinfo",
-            "version": "15.1p2"
+            "version": "15.1p4"
           },
           {
             "licenses": [
@@ -494,7 +494,7 @@
           {
             "name": "@img/sharp-wasm32",
             "purl": "",
-            "version": "0.35.4"
+            "version": "0.35.5"
           },
           {
             "name": "@next/env",
@@ -514,7 +514,7 @@
           {
             "name": "bulwark-webmail",
             "purl": "",
-            "version": "1.12.0"
+            "version": "1.13.0"
           },
           {
             "name": "caniuse-lite",
@@ -594,12 +594,12 @@
           {
             "name": "sharp",
             "purl": "",
-            "version": "0.35.4"
+            "version": "0.35.5"
           },
           {
             "name": "source-map-js",
             "purl": "",
-            "version": "1.2.1"
+            "version": "1.2.2"
           },
           {
             "name": "styled-jsx",
