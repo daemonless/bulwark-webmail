@@ -72,7 +72,7 @@ jobs:
 
   build:
     needs: build-web
-    uses: daemonless/dbuild/.github/workflows/daemonless-build.yaml@main
+    uses: daemonless/workflows/.github/workflows/daemonless-build.yaml@main
     with:
       image_name: bulwark-webmail
       pre_artifact_name: bulwark-web
