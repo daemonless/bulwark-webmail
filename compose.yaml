@@ -13,7 +13,10 @@ x-daemonless:
 
   docs:
     env:
-      JMAP_SERVER_URL: "URL of your Stalwart JMAP server (e.g. https://mail.example.com)"
+      JMAP_SERVER_URL:
+        desc: "URL of your Stalwart JMAP server (e.g. https://mail.example.com); leave blank to configure in /setup"
+        optional: true
+        level: primary
       TZ: "Timezone for the container"
     volumes:
       /config: "Admin config, settings sync, and telemetry state"
@@ -30,7 +33,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=UTC
-      - JMAP_SERVER_URL=https://mail.example.com
+      - JMAP_SERVER_URL=
 
     volumes:
       - /path/to/containers/bulwark-webmail:/config
