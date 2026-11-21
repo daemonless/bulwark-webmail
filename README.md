@@ -39,7 +39,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=UTC  # Timezone for the container
-      - JMAP_SERVER_URL=https://mail.example.com  # URL of your Stalwart JMAP server (e.g. https://mail.example.com)
+      - JMAP_SERVER_URL=  # URL of your Stalwart JMAP server (e.g. https://mail.example.com); leave blank to configure in /setup
     volumes:
       - "/containers/bulwark-webmail:/config"
     ports:
@@ -60,7 +60,7 @@ DIRECTOR_PROJECT=bulwark-webmail
 PUID=1000
 PGID=1000
 TZ=UTC
-JMAP_SERVER_URL=https://mail.example.com
+JMAP_SERVER_URL=
 ```
 
 **appjail-director.yml**:
@@ -127,7 +127,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=UTC
-      - JMAP_SERVER_URL=https://mail.example.com
+      - JMAP_SERVER_URL=
     volumes:
       - "/containers/bulwark-webmail:/config"
 ```
@@ -144,7 +144,7 @@ Open `http://<server>:3000` from another machine (the server's own browser can't
 | `PUID` | `1000` |  |
 | `PGID` | `1000` |  |
 | `TZ` | `UTC` | Timezone for the container |
-| `JMAP_SERVER_URL` | `https://mail.example.com` | URL of your Stalwart JMAP server (e.g. https://mail.example.com) |
+| `JMAP_SERVER_URL` | `` | URL of your Stalwart JMAP server (e.g. https://mail.example.com); leave blank to configure in /setup |
 
 ### Volumes
 
