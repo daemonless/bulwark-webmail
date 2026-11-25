@@ -1,11 +1,11 @@
 {
-  "generated": "2026-11-21T09:45:46Z",
+  "generated": "2026-11-25T22:34:15Z",
   "image": "bulwark-webmail",
   "tags": {
     "latest": {
-      "app_version": "1.21.3",
+      "app_version": "1.22.0",
       "arch": "amd64",
-      "generated": "2026-11-21T09:45:08Z",
+      "generated": "2026-11-25T22:33:37Z",
       "packages": {
         "dotnet": [],
         "freebsd": [
@@ -77,7 +77,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-libarchive",
-            "version": "15.1"
+            "version": "15.1p7"
           },
           {
             "licenses": [
@@ -105,7 +105,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-libldns",
-            "version": "15.1"
+            "version": "15.1p7"
           },
           {
             "licenses": [
@@ -147,14 +147,14 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-openssl",
-            "version": "15.1"
+            "version": "15.1p7"
           },
           {
             "licenses": [
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-openssl-lib",
-            "version": "15.1p4"
+            "version": "15.1p7"
           },
           {
             "licenses": [
@@ -168,7 +168,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-pkg-bootstrap",
-            "version": "15.1"
+            "version": "15.1p7"
           },
           {
             "licenses": [
@@ -189,7 +189,7 @@
               "BSD2CLAUSE"
             ],
             "name": "FreeBSD-runtime",
-            "version": "15.1p6"
+            "version": "15.1p7"
           },
           {
             "licenses": [
@@ -224,7 +224,7 @@
               "CDDL-1.0"
             ],
             "name": "FreeBSD-zfs-lib",
-            "version": "15.1p1"
+            "version": "15.1p7"
           },
           {
             "licenses": [
@@ -238,7 +238,7 @@
               "PD"
             ],
             "name": "FreeBSD-zoneinfo",
-            "version": "15.1p5"
+            "version": "15.1p7"
           },
           {
             "licenses": [
@@ -488,7 +488,7 @@
           {
             "name": "@next/env",
             "purl": "",
-            "version": "16.4.3"
+            "version": "16.4.6"
           },
           {
             "name": "@opentelemetry/api",
@@ -518,7 +518,7 @@
           {
             "name": "bulwark-webmail",
             "purl": "",
-            "version": "1.21.3"
+            "version": "1.22.0"
           },
           {
             "name": "caniuse-lite",
@@ -578,7 +578,7 @@
           {
             "name": "next",
             "purl": "",
-            "version": "16.4.3"
+            "version": "16.4.6"
           },
           {
             "name": "picocolors",
